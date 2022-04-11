@@ -1,69 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>선불 로그인 페이지</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>선불 로그인 페이지</title>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">	
 </head>
 <body>
-    <div class="login_w">
-        <div class="top_w">
-            <div class="login_box">
-                <h1 class="login_tit">LOGIN</h1>
-                <h2>선불회원 아이디와 <br>비밀번호를 입력하여 로그인해주세요.</h2>
-                <div id="login">
-                    <form class="cf">
-                        <fieldset>
-                            <div class="id_b">
-                                <input type="text" required placeholder="아이디를 입력해 주세요."/>
-                            </div>
-                            <div class="pw_b">
-                                <input type="password" required placeholder="비밀번호를 입력해 주세요." />
-                             </div>  
-                             <div class="show-password fas fa-eye-slash"></div>                          
-                             <div class="otp_b">
-                                <span>OTP 인증번호</span> 
-                                <input type="text" required placeholder="인증번호 입력">
-                            </div>
-                            <button class="buttons" disabled>LOGIN</button>
+	<div class="loginWrap">
+		<section>
+			<div class="leftW fl">
+				<div class="left">
+	
+					<div id="login">
+						<form action="#" class="login_form">
+							<h1>LOGIN</h1>
+							<div class="textb">
+							  <input type="text" required>
+							  <div class="placeholder">아이디를 입력해주세요.</div>
+							</div>
+						
+							<div class="textb">
+							  <input type="password" required>
+							  <div class="placeholder">비밀번호를 입력해주세요.</div>
+							  <div class="show-password fas fa-eye-slash"></div>
+							</div>
+						
+							<div class="textb">
+							  <input type="text" required>
+							  <div class="placeholder">OTP 인증번호</div>
+							</div>    
+						
 							<div class="checkbox fl">
-                                <input type="checkbox"> 아이디 저장
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>                   
-            </div>
-            <div class="login_img"><img src="img/loginimg.png" alt="로그인 비주얼 이미지" width="310" ></div>
-        </div>
-        <div class="bottom_w">
-            <div class="member_cnt">   
-                <img src="img/user1.png" height="42" alt="회원가입" >
-                <p>회원가입을 하시겠습니까?</p>
-                <a href="../../member/join.html">회원가입</a>
-            </div>
-            <div class="id_cnt">
-                <img src="img/password.png" height="42" alt="아이디 찾기" >
-                <p>아이디를 분실하셨습니까?</p>
-                <a href="#">ID 찾기</a>                
-            </div>
-            <div class="pw_cnt">
-                <img src="img/lock1.png" height="42" alt="비밀번호 찾기" >
-                <p>비밀번호를 분실하셨습니까?</p>
-                <a href="#">비밀번호 찾기</a>                
-            </div>
-           
-        </div>
-        <p class="copyright">Copyright 2022 © [&nbsp;&nbsp;회사이름&nbsp;&nbsp;]. All rights reserved.</p>
-    </div>
+							  <input type="checkbox">
+							  <div class="fas fa-check"></div>
+							  아이디 저장
+							</div>
+							<a href="#" class="fr">아이디 / 비밀번호 찾기</a>
+						
+							<button class="btn cf" disabled>LOGIN</button>
+						   
+							<a href="#" class="memb">계정이 없으신가요? <span>회원가입</span> 하러가기</a>
+						  </form>
+						
 
-    
-    <script>
+						
+					</div>
+	
+					
+				</div>	
+			</div><!-- class="leftW" -->
+			
+			<div class="rightW fl">	
+				
+				<h2 class="visualImg fl">
+					<img src="img/img_login2.png" alt="메인이미지"/>
+				</h2>
+				<div class="copyright">Copyright 2022 © 회사이름자리입니다. All rights reserved.</div>
+
+			</div><!-- class="rightW" -->
+		</section>
+	</div>
+	<script>
 		//input값이 전부 입력되면 버튼 checked
-		var fields = document.querySelectorAll("div input");
-		var btn = document.querySelector(".buttons");
+		var fields = document.querySelectorAll(".textb input");
+		var btn = document.querySelector(".btn");
 		function check(){
 		  if(fields[0].value != "" && fields[2].value != "")
 			btn.disabled = false;
@@ -74,9 +76,8 @@
 		fields[0].addEventListener("keyup",check);
 		fields[1].addEventListener("keyup",check);
 		fields[2].addEventListener("keyup",check);
-
-        //password 아이콘 클릭 시 보이게
-        var fields = document.querySelectorAll("#login input");                
+	
+		//password 아이콘 클릭 시 보이게
 		document.querySelector(".show-password").addEventListener("click",function(){
 		  if(this.classList[2] == "fa-eye-slash"){
 			this.classList.remove("fa-eye-slash");
@@ -88,6 +89,6 @@
 			fields[1].type = "password";
 		  }
 		});
-    </script>
+	  </script>	
 </body>
 </html>
